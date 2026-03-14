@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: 4px;
+  scrollbar-color: #ffffff;
+  scrollbar-face-color: #000000;
+}
+
+::-webkit-scrollbar {
+  /* Safari and Chrome */
+  background-color: #ffffff;
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Safari and Chrome */
+  background-color: #000000;
+}
