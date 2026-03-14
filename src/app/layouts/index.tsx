@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { geistSans } from '@/app/fonts';
 import '@/app/styles';
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col antialiased">
+      <body className={`${geistSans.variable} flex flex-col antialiased`}>
         <main className="grow">{children}</main>
       </body>
     </html>

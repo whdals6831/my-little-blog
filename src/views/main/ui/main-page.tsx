@@ -1,3 +1,10 @@
+import { Button } from '@/shared/ui/shadcn/button';
+
 export function MainPage() {
-  return <div className="bg-cyan-300">캬캬</div>;
+  return (
+    <>
+      <div>캬캬캬!</div>
+      <Button>음하하하하!</Button>
+    </>
+  );
 }
