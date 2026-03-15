@@ -48,4 +48,15 @@ export class MockPostRepository implements PostRepository {
     this.posts.splice(index, 1);
     return true;
   }
+
+  async search(query: string): Promise<Post[]> {
+    const q = query.toLowerCase();
+    return [...this.posts]
+      .filter(
+        (p) =>
+          p.title.toLowerCase().includes(q) ||
+          p.body.toLowerCase().includes(q),
+      )
+      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+  }
 }

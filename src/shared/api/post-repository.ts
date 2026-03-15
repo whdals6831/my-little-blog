@@ -6,4 +6,5 @@ export interface PostRepository {
   create(input: { title: string; body: string }): Promise<Post>;
   update(id: string, input: { title: string; body: string }): Promise<Post | null>;
   delete(id: string): Promise<boolean>;
+  search(query: string): Promise<Post[]>;
 }
