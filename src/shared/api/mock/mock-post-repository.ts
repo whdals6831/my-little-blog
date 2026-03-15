@@ -27,4 +27,25 @@ export class MockPostRepository implements PostRepository {
     this.posts.push(post);
     return post;
   }
+
+  async update(
+    id: string,
+    input: { title: string; body: string },
+  ): Promise<Post | null> {
+    const post = this.posts.find((p) => p.id === id);
+    if (!post) return null;
+
+    post.title = input.title;
+    post.body = input.body;
+    post.updatedAt = new Date();
+    return post;
+  }
+
+  async delete(id: string): Promise<boolean> {
+    const index = this.posts.findIndex((p) => p.id === id);
+    if (index === -1) return false;
+
+    this.posts.splice(index, 1);
+    return true;
+  }
 }
